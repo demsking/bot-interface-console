@@ -1,0 +1,29 @@
+{
+  "name": "bot-interface-console",
+  "version": "1.0.0",
+  "description": "A console interface for your bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/test.js",
+    "coverage": "istanbul cover _mocha -- test/test.js -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/demsking/bot-interface-console.git"
+  },
+  "keywords": [
+    "bot",
+    "interface",
+    "console"
+  ],
+  "author": "Sébastien Demanou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/demsking/bot-interface-console/issues"
+  },
+  "homepage": "https://github.com/demsking/bot-interface-console#readme",
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0"
+  }
+}
