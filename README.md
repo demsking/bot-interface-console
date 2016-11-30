@@ -28,4 +28,4 @@ bot.run()
 
 ## License
 
-Under the MIT license. See [LICENSE](https://github.com/demsking/bot-interface-console/blob/master/LICENSE) file for more details.
+Under the MIT license. See [LICENSE](https://github.com/demsking/ibot-interface-console/blob/master/LICENSE) file for more details.
