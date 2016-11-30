@@ -1,7 +1,7 @@
 {
-  "name": "bot-interface-console",
-  "version": "1.0.0",
-  "description": "A console interface for your bot",
+  "name": "ibot-interface-console",
+  "version": "1.0.1",
+  "description": "A console interface for your ibot",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/test.js",
@@ -9,19 +9,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/demsking/bot-interface-console.git"
+    "url": "git+https://github.com/demsking/ibot-interface-console.git"
   },
   "keywords": [
     "bot",
+    "ibot",
     "interface",
     "console"
   ],
   "author": "Sébastien Demanou",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/demsking/bot-interface-console/issues"
+    "url": "https://github.com/demsking/ibot-interface-console/issues"
   },
-  "homepage": "https://github.com/demsking/bot-interface-console#readme",
+  "homepage": "https://github.com/demsking/ibot-interface-console#readme",
   "devDependencies": {
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0"
