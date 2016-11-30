@@ -4,7 +4,7 @@ process.on('SIGINT', () => {
     self.close()
 })
 
-process.stdout.write('Press Ctrl+C to exit\n'.italic)
+process.stdout.write('Press Ctrl+C to exit\n')
 
 let handle_before_end = []
 
@@ -14,8 +14,14 @@ const read = (format) => new Promise((resolve, reject) => {
     }
     
     process.stdin.resume()
-    process.stdin.once('data', function(data) {
-        data = data.toString().trim()
+    process.stdin.once('data', (data) => {
+        data = data.toString()
+        
+        if (!data) {
+            return reject(data)
+        }
+        
+        data = data.trim()
         
         if (format.test(data)) {
             resolve(data)
@@ -25,11 +31,11 @@ const read = (format) => new Promise((resolve, reject) => {
     })
 })
 
-const instance = {
+const stream = {
     write: (text) => process.stdout.write(text),
     println: (text) => process.stdout.write(text + '\n'),
     ask: (question, format = /.+/) => new Promise((resolve, reject) => {
-        instance.write(question + ' ')
+        stream.write(question + ' ')
         read(format)
             .then(resolve)
             .catch(reject)
@@ -44,12 +50,13 @@ const instance = {
 }
 
 const self = {
-    configure: (options) => new Promise((resolve, reject) => {
+    configure: (options) => new Promise((resolve) => {
         // nothing to do
         resolve()
     }),
-    open: () => new Promise((resolve, reject) => {
-        resolve(instance)
+    open: (start) => new Promise((resolve) => {
+        resolve()
+        start(stream)
     }),
     close: () => new Promise((resolve) => {
         handle_before_end.forEach((handle) => {
